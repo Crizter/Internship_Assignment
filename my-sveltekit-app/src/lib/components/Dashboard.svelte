@@ -17,8 +17,8 @@
   // Fetch data on component mount
   onMount(async () => {
     const [alarmResponse, vehicleResponse] = await Promise.all([
-      fetch('/static/alarms_json.json'),
-      fetch('/static/vehicle_performance_json.json')
+       fetch('/alarms_json.json'),
+    fetch('/vehicle_performance_json.json')
     ]);
     
     alarmData = await alarmResponse.json();
