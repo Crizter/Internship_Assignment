@@ -310,8 +310,13 @@
       </button>
     </div>
   </div>
+
+  <div>
+    <!-- <button on:click=>Click for vehicle status</button> -->
+    <a href="/status" class="bg-blue-500 text-white px-4 py-2 rounded inline-block">
+  Go to Vehicle Status
+</a>
+  </div>
+
 </div>
 
-<style>
-  /* Keep only Tailwind classes and any component-specific styles */
-</style>
