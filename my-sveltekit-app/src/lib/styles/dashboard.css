@@ -1,0 +1,283 @@
+/* Dashboard Layout */
+.dashboard {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background-color: #f5f5f5;
+}
+
+/* Widget Container */
+.widget {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Widget Headers */
+.widget-header {
+  position: relative;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.widget-title {
+  background: linear-gradient(120deg, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Widget Styles */
+.widget {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 1.25rem;
+}
+
+/* Content Sections */
+.content-section {
+  margin-bottom: 1.5rem;
+}
+
+/* Chart Styles */
+.chart-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 16px;
+  margin: 1.5rem 0;
+}
+
+.chart-bar {
+  background: linear-gradient(180deg, #60a5fa, #3b82f6);
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+  border-radius: 6px 6px 0 0;
+  transform-origin: bottom;
+  animation: scaleUp 0.5s ease-out;
+  transition: all 0.3s ease;
+}
+
+.chart-bar:hover {
+  background: linear-gradient(180deg, #93c5fd, #3b82f6);
+  transform: scaleY(1.02);
+}
+
+/* Performance Summary */
+.performance-summary {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin: 1.5rem 0;
+}
+
+/* Performance Summary Pills */
+.performance-dot {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+  transition: transform 0.2s ease;
+}
+
+.performance-dot:hover {
+  animation: pulse 1s infinite;
+}
+
+/* List Item Enhancements */
+.vehicle-item {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  background: linear-gradient(90deg, #f8fafc, #ffffff);
+  position: relative;
+}
+
+.vehicle-item:hover {
+  background-color: #f8fafc;
+}
+
+.vehicle-item > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Add subtle divider between items */
+.vehicle-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 1px;
+  background-color: #f1f5f9;
+}
+
+/* Remove last divider */
+.vehicle-item:last-child::after {
+  display: none;
+}
+
+/* Button Interactions */
+.action-button {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  box-shadow: 2px 2px 5px #e2e8f0, -2px -2px 5px #ffffff;
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  box-shadow: 3px 3px 6px #e2e8f0, -3px -3px 6px #ffffff;
+}
+
+.action-button:active {
+  background: linear-gradient(145deg, #f1f5f9, #f8fafc);
+  box-shadow: inset 2px 2px 5px #e2e8f0, inset -2px -2px 5px #ffffff;
+}
+
+/* Icon Container */
+.icon-container {
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Typography */
+.number-display {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.025em;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  margin-top: 1.5rem;
+}
+
+/* Grid Background */
+.bg-gray-50 {
+  background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Apply animations to elements */
+.widget {
+  animation: slideIn 0.5s ease-out;
+}
+
+.chart-bar {
+  animation: scaleUp 0.6s ease-out;
+  transform-origin: bottom;
+}
+
+.number-display {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.vehicle-item {
+  animation: slideRight 0.3s ease-out;
+}
+
+/* Enhanced transitions */
+.widget {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-item {
+  transition: all 0.2s ease;
+}
+
+.vehicle-item:hover {
+  transform: translateX(4px);
+  background: linear-gradient(90deg, #f0f9ff, #ffffff);
+}
+
+.chart-bar {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.chart-bar:hover {
+  transform: scaleY(1.05);
+}
+
+.performance-dot {
+  transition: transform 0.2s ease;
+}
+
+.performance-dot:hover {
+  animation: pulse 1s infinite;
+}
+
+.action-button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+/* Staggered animations for list items */
+.vehicle-item:nth-child(1) { animation-delay: 0.1s; }
+.vehicle-item:nth-child(2) { animation-delay: 0.2s; }
+.vehicle-item:nth-child(3) { animation-delay: 0.3s; }
+.vehicle-item:nth-child(4) { animation-delay: 0.4s; }
+.vehicle-item:nth-child(5) { animation-delay: 0.5s; }
+.vehicle-item:nth-child(6) { animation-delay: 0.6s; }
