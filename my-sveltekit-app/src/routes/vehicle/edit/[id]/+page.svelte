@@ -8,7 +8,7 @@
   let vehicleData = null;
   let loading = true;
 
-  onMount(async () => {
+  onMount(async () => { 
     try {
       const response = await fetch('/asset_details_json.json');
       vehicleData = await response.json();
@@ -21,7 +21,6 @@
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Navigate to confirmation page with form data
     goto('/vehicle/confirm', {
       state: {
         vehicleData: {
@@ -31,12 +30,20 @@
           trackerType: e.target.trackerType?.value,
           gpsId: e.target.gpsId?.value,
           simNo: e.target.simNo?.value,
+          satelliteId: e.target.satelliteId?.value,
+          map: e.target.map?.value,
           timezone: e.target.timezone?.value,
           engineNo: e.target.engineNo?.value,
           chassisNo: e.target.chassisNo?.value,
           baseMileage: e.target.baseMileage?.value,
+          purchaseValue: e.target.purchaseValue?.value,
+          manufactureDate: e.target.manufactureDate?.value,
+          expiryDate: e.target.expiryDate?.value,
+          type: e.target.type?.value,
+          category: e.target.category?.value,
           model: e.target.model?.value,
           brand: e.target.brand?.value,
+          color: e.target.color?.value,
           engineFuel: e.target.engineFuel?.value
         }
       }

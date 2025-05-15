@@ -32,25 +32,22 @@
       </div>
 
       <div class="p-8">
-        <!-- Summary Sections -->
         <div class="space-y-8">
           <!-- Vehicle Identification -->
           <div class="space-y-4">
             <h3 class="text-lg font-medium text-white">Vehicle Identification</h3>
             <div class="grid grid-cols-2 gap-4 text-sm">
-              <div class="space-y-4">
-                <div>
-                  <span class="text-gray-400">Group:</span>
-                  <span class="text-white ml-2">{vehicleData?.group || 'OzoneCars'}</span>
-                </div>
-                <div>
-                  <span class="text-gray-400">Plate No:</span>
-                  <span class="text-white ml-2">{vehicleData?.plate || '-'}</span>
-                </div>
-                <div>
-                  <span class="text-gray-400">Adas Id:</span>
-                  <span class="text-white ml-2">{vehicleData?.adasId || '-'}</span>
-                </div>
+              <div>
+                <span class="text-gray-400">Group:</span>
+                <span class="text-white ml-2">{vehicleData?.group || '-'}</span>
+              </div>
+              <div>
+                <span class="text-gray-400">Plate No:</span>
+                <span class="text-white ml-2">{vehicleData?.plate || '-'}</span>
+              </div>
+              <div>
+                <span class="text-gray-400">Adas Id:</span>
+                <span class="text-white ml-2">{vehicleData?.adasId || '-'}</span>
               </div>
             </div>
           </div>
@@ -61,7 +58,7 @@
             <div class="grid grid-cols-2 gap-4 text-sm">
               <div>
                 <span class="text-gray-400">Type:</span>
-                <span class="text-white ml-2">{vehicleData?.trackerType || 'GT-X1'}</span>
+                <span class="text-white ml-2">{vehicleData?.trackerType || '-'}</span>
               </div>
               <div>
                 <span class="text-gray-400">GPS Id:</span>
@@ -70,6 +67,14 @@
               <div>
                 <span class="text-gray-400">SIM No:</span>
                 <span class="text-white ml-2">{vehicleData?.simNo || '-'}</span>
+              </div>
+              <div>
+                <span class="text-gray-400">Satellite Id:</span>
+                <span class="text-white ml-2">{vehicleData?.satelliteId || '-'}</span>
+              </div>
+              <div>
+                <span class="text-gray-400">Map:</span>
+                <span class="text-white ml-2">{vehicleData?.map || '-'}</span>
               </div>
               <div>
                 <span class="text-gray-400">Time Zone:</span>
@@ -95,16 +100,40 @@
                 <span class="text-white ml-2">{vehicleData?.baseMileage || '0'}</span>
               </div>
               <div>
+                <span class="text-gray-400">Purchase Value:</span>
+                <span class="text-white ml-2">{vehicleData?.purchaseValue || '0'}</span>
+              </div>
+              <div>
+                <span class="text-gray-400">Manufacture Date:</span>
+                <span class="text-white ml-2">{vehicleData?.manufactureDate || '-'}</span>
+              </div>
+              <div>
+                <span class="text-gray-400">Expiry Date:</span>
+                <span class="text-white ml-2">{vehicleData?.expiryDate || '-'}</span>
+              </div>
+              <div>
+                <span class="text-gray-400">Type:</span>
+                <span class="text-white ml-2">{vehicleData?.type || '-'}</span>
+              </div>
+              <div>
+                <span class="text-gray-400">Category:</span>
+                <span class="text-white ml-2">{vehicleData?.category || '-'}</span>
+              </div>
+              <div>
                 <span class="text-gray-400">Model:</span>
-                <span class="text-white ml-2">{vehicleData?.model || 'NISSAN SUNNY'}</span>
+                <span class="text-white ml-2">{vehicleData?.model || '-'}</span>
               </div>
               <div>
                 <span class="text-gray-400">Brand:</span>
-                <span class="text-white ml-2">{vehicleData?.brand || 'Nissan'}</span>
+                <span class="text-white ml-2">{vehicleData?.brand || '-'}</span>
+              </div>
+              <div>
+                <span class="text-gray-400">Color:</span>
+                <span class="text-white ml-2">{vehicleData?.color || '-'}</span>
               </div>
               <div>
                 <span class="text-gray-400">Engine Fuel:</span>
-                <span class="text-white ml-2">{vehicleData?.engineFuel || 'Diesel'}</span>
+                <span class="text-white ml-2">{vehicleData?.engineFuel || '-'}</span>
               </div>
             </div>
           </div>
