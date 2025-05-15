@@ -1,6 +1,7 @@
 <script>
   import { fade } from 'svelte/transition';
   import { Clock, MoreVertical, ChevronLeft, ChevronRight } from 'lucide-svelte';
+  import { goto } from '$app/navigation';
   
   export let alarmData;
   export let totalAlarms;
@@ -8,6 +9,11 @@
   export let alarmPage;
   export let onNextPage;
   export let onPrevPage;
+
+  // Fetch vehicle data when an alarm is clicked
+  const handleAlarmClick = (plate) => {
+    goto(`/vehicle/edit/${plate}`);
+  };
 </script>
 
 <div class="bg-white rounded-lg shadow p-4 widget" in:fade={{ duration: 300, delay: 100 }}>
@@ -40,9 +46,10 @@
   <div class="overflow-hidden">
     {#each paginatedAlarms as alarm, i (alarm.createtime)}
       <div
-        class="grid grid-cols-3 gap-6 py-3 px-4 vehicle-item border-b last:border-b-0 border-gray-100"
+        class="grid grid-cols-3 gap-6 py-3 px-4 vehicle-item border-b last:border-b-0 border-gray-100 cursor-pointer hover:bg-gray-50"
         in:fade={{ duration: 300, delay: i * 50 }}
         out:fade={{ duration: 200 }}
+        on:click={() => handleAlarmClick(alarm.plate)}
       >
         <span class="text-gray-600">{alarm.createtime.split(' ')[1]}</span>
         <span class="font-medium">{alarm.plate}</span>
